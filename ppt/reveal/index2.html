@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reveal.js with Base64 Background</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Reveal.js Container -->
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide with Base64 Background -->
+	  <!--
+      <section class="base64-bg">Welcome to Slide 1</section>
+	  -->
+      <section class="base64-bg"></section>
+      <section>Slide 2 with no background</section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.js"></script>
+  <script>
+    // Initialize Reveal.js
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      transition: 'slide', // Slide transition
+    });
+  </script>
+</body>
+</html>
+

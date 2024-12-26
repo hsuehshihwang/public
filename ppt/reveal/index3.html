@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reveal.js with Base64 Background</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css">
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+  <!-- Reveal.js Container -->
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide with Base64 Background -->
+      <!--
+      <section class="base64-bg">Welcome to Slide 1</section>
+      -->
+      <section class="bg lost-bg"></section>
+      <section>
+          <p>lost</p>
+      </section>
+      <section>
+          <p>got lost</p>
+      </section>
+      <section>
+          <p>got lost on my way to the station.</p> 
+          <audio controls>
+              <source src="https://translate.google.com/translate_tts?ie=utf-8&q=got+lost+on+the+way+to+train+station.+&tl=en&client=tw-ob" type="audio/mpeg">
+          </audio>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.js"></script>
+  <script>
+    // Initialize Reveal.js
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      transition: 'slide', // Slide transition
+    });
+    function generateTTSLink(text, language) {
+      const baseURL = "https://translate.google.com/translate_tts";
+      const params = new URLSearchParams({
+        ie: "utf-8",
+        q: text,
+        tl: language,
+        client: "tw-ob",
+      });
+      return `${baseURL}?${params.toString()}`;
+    }
+    function generateGoogleTranslateLink(text, sourceLang, targetLang) {
+      const baseURL = "https://translate.google.com/";
+      const params = new URLSearchParams({
+        sl: sourceLang,
+        tl: targetLang,
+        text: text,
+        op: "translate",
+      });
+      return `${baseURL}?${params.toString()}`;
+    }
+    
+    function generateGoogleDictionaryLink(word) {
+      return `https://www.google.com/search?q=define+${encodeURIComponent(word)}`;
+    }
+    
+    // Usage:
+    /*
+    const ttsLink = generateTTSLink("Hello, how are you?", "en");
+    console.log(ttsLink);
+
+    const translateLink = generateGoogleTranslateLink("Hello, world!", "en", "fr");
+    const dictionaryLink = generateGoogleDictionaryLink("example");
+    
+    console.log("Translate Link:", translateLink);
+    console.log("Dictionary Link:", dictionaryLink);
+    */
+  </script>
+</body>
+</html>
+
